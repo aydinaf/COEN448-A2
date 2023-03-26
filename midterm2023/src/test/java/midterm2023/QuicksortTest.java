@@ -29,13 +29,45 @@ class QuicksortTest {
         assertArrayEquals(expected, a1);
     }
 
+    @Test
+    public void sort1Element() {
+        Integer[] A = {1};
+        Quicksort.sort(A);
+        assertArrayEquals(new Integer[]{1}, A);
+    }
+
+    @Test
+    public void sortSameElements() {
+        Integer[] A = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+        Quicksort.sort(A);
+        assertArrayEquals(new Integer[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, A);
+    }
+
+    @Test
+    public void sortAlreadySorted() {
+        Integer[] A = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        Quicksort.sort(A);
+        assertArrayEquals(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A);
+    }
+
+    @Test
+    public void sortReverseOrder() {
+        Integer[] A = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+        Quicksort.sort(A);
+        assertArrayEquals(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A);
+    }
+
+    @Test
+    public void sortRandomElements() {
+        Integer[] A = {3, 7, 2, 6, 1, 9, 10, 8, 5, 4};
+        Quicksort.sort(A);
+        assertArrayEquals(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A);
+    }
+
+    @Test
+    public void sortNegative() {
+        Integer[] A = {3, -7, 2, 6, -9, 1, 10, -8, 5, 4};
+        Quicksort.sort(A);
+        assertArrayEquals(new Integer[]{-9, -8, -7, 1, 2, 3, 4, 5, 6, 10}, A);
+    }
 }
-
-
-
-
-
-
-
-
-
